@@ -1,0 +1,16 @@
+language: python3
+
+python:
+    - "3.8"
+env:
+    - SECRET_KEY='TEST'
+services:
+    - postgresql
+install:
+    - pip3 install
+
+script:
+    - coverage run --source='authentication' manage.py test && coverage report 
+after_success:
+    - codecov
+

@@ -1,0 +1,1 @@
+### Django Authentication App [![Build Status](https://travis-ci.com/Unseen2000/Django-auth-app.svg?branch=project-set-up)](https://travis-ci.com/Unseen2000/Django-auth-app) [![codecov](https://codecov.io/gh/Unseen2000/Django-auth-app/branch/project-set-up/graph/badge.svg?token=YP8435Z0D3)](https://codecov.io/gh/Unseen2000/Django-auth-app)

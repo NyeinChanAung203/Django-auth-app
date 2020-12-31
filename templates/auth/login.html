@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card mt-5">
+                    <img src="{% static 'img/instagram.gif' %}" class="card-img-top" alt="logo">
+                    <div class="card-body">
+                        
+                        <h3 class="text-center">Login</h3>
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-{{message.tags}}">
+                                {{message}}
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                        <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                            <input type="text" name="username" placeholder="Username" class="form-control mb-3">
+                            <input type="password" name="password" placeholder="Password" class="form-control mb-3">
+                            <input type="submit" value="Login" class="btn btn-primary btn-block">
+                        </form>
+                        
+                        <small><a href="{% url 'reset' %}">Forgot password?</a></small>
+                        <div class="row mt-2">
+                            <div class="col-md-5"><hr></div>
+                            <div class="col-md-2 text-muted">OR</div>
+                            <div class="col-md-5"><hr></div>
+                        </div>
+                        
+                        <a href="#" class="btn btn-sm btn-block btn-primary">
+                            <i class="fab fa-facebook mr-2"></i>
+                            Login with Facebook
+                        </a>
+                    </div>
+                </div>
+                <div class="card my-3">
+                    <div class="card-body">
+                    <p class="card-text">If you don't have an account,go to <a href="{% url 'register' %}">Sign up</a></p>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+{% endblock content %}
+
